@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/css/normalize.css" />
+        <link rel="stylesheet" href="src/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/4575cfd1b4.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="game">
+            <div class="name"></div>
+            <div class="container">
+                <div class="message">
+                    <span class="lvl"></span>
+                    <span class="seconds"></span>
+                </div>
+                <div class="start"></div>
+                <div class="word"></div>
+                <input type="text" class="input" name="written"/>
+                <div class="upcoming-words"></div>
+                <div class="control">
+                    <div class="time"><span></span></div>
+                    <div class="score"><span class="got"></span><span class="total"></span></div>
+                </div>
+                <div class="commands">
+
+                    <select name="" id="level">
+                        <option value="normal"></option>
+                        <option value="easy"></option>
+                        <option value="hard"></option>
+                    </select>
+                    <div class="change">
+                        <button class="darkBtn">
+                            <i class="fa-solid fa-circle-half-stroke"></i>
+                        </button>
+                        <select name="" id="langs">
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
+                            <option value="it">Italiano</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="finish"></div>
+            </div>
+        </div>
+        <script src="src/js/translate.js" type="module"></script>
+        <script src="src/js/main.js" type="module"></script>
+    </body>
+</html>

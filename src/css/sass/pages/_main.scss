@@ -1,0 +1,146 @@
+@use "sass:color";
+
+body {
+    .game {
+        %content {
+            background-color: white;
+            margin: 15px 0;
+            padding: 15px;
+        }
+        background-color: $game_background_light;
+        min-height: 100vh;
+        .name {
+            background-color: $main-color;
+            color: white;
+            padding: 20px;
+            font: {
+                size: 20px;
+                weight: bold;
+            }
+            text-align: center;
+        }
+        .message {
+            @extend %content;
+            border-radius: 6px;
+            text-align: center;
+            line-height: 1.8;
+            span {
+                font-weight: bold;
+                color: #009688;
+                &::before {
+                    content: "[";
+                }
+                &::after {
+                    content: "]";
+                }
+            }
+        }
+        .start {
+            font: {
+                size: 20px;
+                weight: bold;
+            }
+            text-align: center;
+            background-color: #009688;
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            &.disabled {
+                pointer-events: none;
+                cursor: no-drop;
+                background-color: color.adjust(#009688, $lightness: -20%);
+            }
+        }
+        .word {
+            margin-top: 15px;
+            text-align: center;
+            font: {
+                size: 40px;
+                weight: bold;
+            }
+            color: $main-color;
+            user-select: none;
+        }
+        .input {
+            margin: 15px 0;
+            width: 100%;
+            display: block;
+            padding: 15px;
+            border: none;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 20px;
+            border-radius: 6px;
+            caret-color: $main-color;
+            &:focus {
+                outline: none;
+            }
+        }
+        .upcoming-words {
+            @extend %content;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            div {
+                background-color: $main-color;
+                color: white;
+                font-weight: bold;
+                margin: 4px;
+                padding: 10px;
+                border-radius: 6px;
+            }
+        }
+        .control {
+            display: flex;
+            justify-content: space-between;
+            @extend %content;
+            span {
+                font-weight: bold;
+                color: #009688;
+                &::before {
+                    content: "[";
+                }
+                &::after {
+                    content: "]";
+                }
+            }
+        }
+        .commands {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .change {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                gap: 20px;
+                button {
+                    background-color: transparent;
+                    border: none;
+                    font-size: 15px;
+                    padding: 5px;
+                    border-radius: 10px;
+                    &:hover {
+                        background-color: #ddd;
+                    }
+                }
+            }
+        }
+        .finish {
+            font: {
+                size: 40px;
+                weight: bold;
+            }
+            text-align: center;
+            padding: 15px;
+            .good {
+                color: $main-color;
+            }
+            .bad {
+                color: red;
+            }
+        }
+    }
+    @include container(0px);
+}

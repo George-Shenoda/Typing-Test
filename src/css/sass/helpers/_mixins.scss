@@ -1,0 +1,145 @@
+@mixin sm {
+    @media (min-width: $sm) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: $md) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: $lg) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: $xl) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (min-width: $xxl) {
+        @content;
+    }
+}
+
+@mixin prefix($key, $value) {
+    -webkit-#{$key}: $value;
+    -moz-#{$key}: $value;
+    -o-#{$key}: $value;
+    -ms-#{$key}: $value;
+    #{$key}: $value;
+}
+
+@mixin keyframe($animation) {
+    @-webkit-keyframes #{$animation} {
+        @content;
+    }
+    @-moz-keyframes #{$animation} {
+        @content;
+    }
+    @-o-keyframes #{$animation} {
+        @content;
+    }
+
+    @keyframes #{$animation} {
+        @content;
+    }
+}
+
+@mixin container($size) {
+    .container {
+        margin: auto;
+        width: 100%;
+    }
+    @if ($size >= $sm) {
+        @include sm {
+            .container {
+                width: 540px;
+            }
+        }
+        @include md {
+            .container {
+                width: 540px;
+            }
+        }
+        @include lg {
+            .container {
+                width: 960px;
+            }
+        }
+        @include xl {
+            .container {
+                width: 1140px;
+            }
+        }
+        @include xxl {
+            .container {
+                width: 1320px;
+            }
+        }
+    }
+    @else if ($size < $lg) {
+        @include md {
+            .container {
+                width: 540px;
+            }
+        }
+        @include lg {
+            .container {
+                width: 960px;
+            }
+        }
+        @include xl {
+            .container {
+                width: 1140px;
+            }
+        }
+        @include xxl {
+            .container {
+                width: 1320px;
+            }
+        }
+    }
+    @else if ($size < $xl) {
+        @include lg {
+            .container {
+                width: 960px;
+            }
+        }
+        @include xl {
+            .container {
+                width: 1140px;
+            }
+        }
+        @include xxl {
+            .container {
+                width: 1320px;
+            }
+        }
+    }
+    @else if ($size < $xxl) {
+        @include xl {
+            .container {
+                width: 1140px;
+            }
+        }
+        @include xxl {
+            .container {
+                width: 1320px;
+            }
+        }
+    }
+    @else if ($size >= $xxl) {
+        @include xxl {
+            .container {
+                width: 1320px;
+            }
+        }
+    }
+}

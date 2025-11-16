@@ -1,0 +1,35 @@
+@use "sass:color";
+
+body {
+    select {
+        background-color: transparent;
+        border: 0;
+        font-size: 17px;
+        &:focus {
+            outline: none;
+        }
+        option {
+            text-align: center;
+            border: none;
+            background-color: color.adjust(
+                $game_background_light,
+                $lightness: -3%
+            );
+        }
+        &.disabled{
+            pointer-events: none;
+        }
+    }
+}
+
+body.dark {
+    select {
+        color: white;
+        option {
+            background-color: color.adjust(
+                $game_background_dark,
+                $lightness: 5%
+            );
+        }
+    }
+}

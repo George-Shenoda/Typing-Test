@@ -1,0 +1,37 @@
+@use "sass:color";
+
+body.dark {
+    .game {
+        background-color: $game_background_dark;
+        .name {
+            background-color: color.adjust($main-color, $lightness: -30%);
+        }
+        %darkContent {
+            color: white;
+            background-color: color.adjust(
+                $game_background_dark,
+                $lightness: 3%
+            );
+        }
+        .message {
+            @extend %darkContent;
+        }
+        .upcoming-words {
+            @extend %darkContent;
+        }
+        .control {
+            @extend %darkContent;
+        }
+        .change {
+            button {
+                color: white;
+                &:hover {
+                    background-color: color.adjust(
+                        $game_background_dark,
+                        $lightness: 5%
+                    );
+                }
+            }
+        }
+    }
+}
